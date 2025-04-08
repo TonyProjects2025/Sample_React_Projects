@@ -1,0 +1,236 @@
+/*-- 4. RESET --*/
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--theme-font);
+    scroll-behavior: smooth;
+    @include transition(all 0.3s ease 0s);
+    position: relative;
+    z-index: 1;
+    background: #000;
+
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--blue-color);
+        outline: 1px solid var(--blue-color);
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+li {
+    list-style: none;
+    font-family: var(--theme-font);
+}
+
+a,
+a:hover,
+a:focus,
+button,
+button:focus {
+    outline: none !important;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: none;
+    font-family: var(--theme-font);
+    @include transition(all 0.3s ease);
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    @include transition(all 0.3s ease);
+}
+
+p {
+    @include transition(all 0.3s ease);
+    font-family: inherit;
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: #ffffff9c;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+    height: auto;
+    border-style: none;
+    @include transition(all 0.3s ease);
+}
+
+svg {
+    vertical-align: middle;
+    @include transition(all 0.3s ease);
+}
+
+.is_relative {
+    position: relative;
+}
+
+section,
+div,
+footer {
+    scroll-margin-top: 0px;
+}
+
+.o-hidden {
+    overflow: hidden;
+}
+
+.mainContent {
+    padding: 170px 0;
+
+    @include respond-below(desktop) {
+        padding: 80px 100px;
+    }
+
+    @include respond-below(laptop) {
+        padding: 80px 50px;
+    }
+    @include respond-below(md) {
+        padding: 50px 50px;
+    }
+
+    @include respond-below(sm) {
+        padding: 50px 30px;
+    }
+
+    @include respond-below(mobile) {
+        padding: 50px 15px;
+    }
+}
+
+.up-resume {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #191919;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .inner-field {
+        width: 100%;
+        position: relative;
+        float: left;
+        height: 80px;
+
+        #filename {
+            padding: 15px 30px;
+            float: left;
+            width: auto;
+            white-space: nowrap;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            color: #a0a7ab;
+            font-size: 15px;
+        }
+
+        label[for="file-upload"] {
+            padding: 15px 30px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        label {
+            &.custom-file-label {
+                cursor: pointer;
+                right: 0;
+                left: 0;
+                top: 0;
+                position: absolute;
+                border-radius: 0;
+                background-color: transparent;
+                bottom: 0;
+                margin: 0;
+                z-index: 9;
+                display: flex;
+                align-items: center;
+                border: none;
+                padding: 15px 30px;
+                height: 80px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 21px;
+                    height: 19px;
+                    background-image: url(../images/upload-icon.svg);
+                    right: 30px;
+                }
+            }
+
+            input {
+                &.custom-file-input {
+                    position: relative;
+                    z-index: 2;
+                    width: 100%;
+                    margin: 0;
+                    float: left;
+                }
+
+                &#file-upload {
+                    position: absolute;
+                    left: -9999px;
+                }
+            }
+        }
+    }
+}
+::-webkit-input-placeholder { /* Edge */
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 1px;
+  }
+  
+  ::placeholder {
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-family: 'gilroy-lightuploaded_file';
+}
